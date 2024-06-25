@@ -24,6 +24,8 @@ services:
       - postgres-data:/var/lib/postgresql/data
     networks:
       - server_db_nw
+    ports:
+      - 5432:5432
 
 networks:
   client_server_nw:
