@@ -1,9 +1,10 @@
-version: '3.9'
+version: '4.0'
 
 services:
   app:
     build:
       context: .
+      dockerfile: ./node-api-docker-master/Dockerfile
     ports:
       - 83:8080
     environment:
