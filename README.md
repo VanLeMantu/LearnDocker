@@ -1,6 +1,7 @@
 # Container orchestration (điều phối container)
 
 ### Container orchestration là gì?
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/01a9a622-0b05-43ec-b7a8-f06a9246774c)
 
 - **Khái niệm**: Với sự phát triển của các ứng dụng phức tạp và quy mô lớn, việc quản lý các container đơn lẻ trở nên không đủ. Container orchestration ra đời nhằm giải quyết vấn đề này bằng cách quản lý và điều phối nhiều container một cách hiệu quả.
 
@@ -23,6 +24,7 @@
 Container orchestration giúp doanh nghiệp quản lý các ứng dụng phức tạp và lớn một cách hiệu quả, tự động hóa các quy trình quan trọng và mang lại sự linh hoạt và hiệu quả trong việc triển khai ứng dụng. Công nghệ này đã trở thành một phần không thể thiếu trong lĩnh vực DevOps và quản lý hạ tầng hiện đại.
 
 ## Các công cụ Container Orchestration phổ biến:
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/db221185-103e-45b6-9047-fd0293033ab3)
 
 1. **Docker Swarm**:
    - Docker Swarm là một công cụ tích hợp sẵn trong Docker để quản lý các container. Nó cho phép bạn dễ dàng triển khai và quản lý các container trên một cụm (cluster) các máy chủ Docker.
@@ -420,6 +422,7 @@ Các bước trên giúp bạn khởi tạo, quản lý và theo dõi dịch v�
 Các bước trên giúp bạn kiểm tra mạng hiện có trên các host trong cluster và tạo dịch vụ đầu tiên với Docker Swarm, bao gồm việc cấu hình mạng để các container có thể giao tiếp với nhau. Các lệnh này cung cấp một cơ sở vững chắc để bắt đầu làm việc với Docker Swarm và quản lý các container trong môi trường phân tán.
 
 ## Docker Stack là gì?
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/1baff7ae-267e-4a82-89b7-d5af11bc5157)
 
 Docker Stack là một khái niệm trong Docker Swarm dùng để triển khai và quản lý các ứng dụng đa container được định nghĩa bằng tệp Docker Compose. Nó cho phép bạn quản lý một nhóm các dịch vụ liên quan với nhau trong môi trường Docker Swarm.
 
@@ -663,6 +666,9 @@ Tệp `docker-compose.yml` trên định nghĩa cách triển khai một dịch 
 Các lệnh này giúp bạn quản lý các dịch vụ Docker Stack một cách hiệu quả trong môi trường Docker Swarm.
 
 ## Kiến trúc Docker Swarm
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/8348b6e3-5da4-43e7-a3ae-a16a41dd3a85)
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/0a318396-1bf4-4c1e-b1d0-8843bb858efd)
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/6c565e17-919e-4efd-82c8-7645e9bbc67b)
 
 ### Các thành phần chính:
 
@@ -814,6 +820,7 @@ Docker Swarm cung cấp một nền tảng mạnh mẽ để quản lý các con
 Docker Swarm cung cấp một nền tảng mạnh mẽ để quản lý và triển khai các ứng dụng container trong môi trường phân tán, đảm bảo khả năng mở rộng, độ tin cậy và quản lý hiệu quả.
 
 ---------------------------------------------------------------------------------------------
+![image](https://github.com/VanLeMantu/LearnDocker/assets/26363844/ac8188ff-e886-4c31-8254-7110a226795d)
 
 1. **Nodes**:
    - **machine4 (manager)**: Node này là một node quản lý (manager) trong Docker Swarm với 15G dung lượng trống.
