@@ -1,14 +1,14 @@
-version: '3.8'
+version: '3.9'
 
 services:
   client:
     image: nginx
-    command: ping 8.8.8.8
+    command: tail -f /dev/null
     networks:
       - fe_nw
   server:
     image: ubuntu
-    command: ping 8.8.8.8
+    command: tail -f /dev/null
     networks:
       - fe_nw
       - be_nw
@@ -26,3 +26,6 @@ services:
       - 3306:3306
     networks:
       - be_nw
+networks:
+  fe_nw:
+  be_nw:
