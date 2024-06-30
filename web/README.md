@@ -1,44 +1,20 @@
-# Anon - An eCommerce Website
+# Sử dụng hình ảnh nginx:alpine làm hình ảnh cơ bản
+FROM nginx:alpine
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/anon-ecommerce-website)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/anon-ecommerce-website?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/anon-ecommerce-website?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/3l8Lob4ysI0?style=social)](https://youtu.be/3l8Lob4ysI0)
+# Xóa bộ đệm apk để đảm bảo rằng chúng ta có được bản cập nhật mới nhất
+RUN apk update && apk upgrade
 
-Anon is a fully responsive ecommerce website, maximum compatiblities in all mobile devices, built using HTML, CSS, and JavaScript.
+# Xóa các tệp HTML mặc định của nginx
+RUN rm -rf /usr/share/nginx/html/*
 
-## Demo
+# Sao chép tất cả các tệp từ thư mục hiện tại vào thư mục HTML của nginx
+COPY . /usr/share/nginx/html
 
-![Anon Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![Anon Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+# Đặt quyền chính xác cho các tệp HTML (nếu cần thiết)
+# RUN chown -R nginx:nginx /usr/share/nginx/html
 
-## Prerequisites
+# Expose port 80
+EXPOSE 80
 
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-## Installing Anon
-
-To install **Anon**, follow these steps:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/anon-ecommerce-website.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/anon-ecommerce-website.git
-```
-
-## Contact
-
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-## License
-
-This project is **free to use** and does not contains any license.
+# Khởi động nginx
+CMD ["nginx", "-g", "daemon off;"]
