@@ -1,0 +1,28 @@
+services:
+  server:
+    image: alpine
+    command: sleep 1000
+    networks:
+      - server_db_nw
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: myDb
+      MYSQL_USER: vanle
+      MYSQL_PASSWORD: 123
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - server_db_nw
+  
+networks:
+  server_db_nw:
+
+volumes:
+  mysql-data:
+    driver: local

@@ -1,0 +1,1 @@
+- sử dụng mysql client ở trong alpine hoặc ubuntu
