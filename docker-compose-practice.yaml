@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  client:
+    image: nginx
+    command: ping 8.8.8.8
+    networks:
+      - fe_nw
+  server:
+    image: ubuntu
+    command: ping 8.8.8.8
+    networks:
+      - fe_nw
+      - be_nw
+    depends_on:
+      - database
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: myDb
+      MYSQL_USER: vanle
+      MYSQL_PASSWORD: 123
+    ports:
+      - 3306:3306
+    networks:
+      - be_nw
