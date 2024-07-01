@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  mobile:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 84:80
