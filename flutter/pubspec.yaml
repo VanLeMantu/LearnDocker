@@ -5,7 +5,7 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
-  
+
 dependencies:
   flutter:
     sdk: flutter
@@ -30,7 +30,7 @@ dependencies:
   # H
   http: ^0.13.5
   # I
-  intl: ^0.18.1
+  intl: ^0.19.0
   # J
   json_serializable: ^6.6.1
   # K
