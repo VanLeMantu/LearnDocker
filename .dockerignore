@@ -1,2 +1,4 @@
 Dockerfile
 .gitignore
+.dart_tool
+build

@@ -1,12 +1,12 @@
-# Use the official Dart image
-FROM dart:latest
+# Use the official Flutter image
+FROM cirrusci/flutter:latest
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the pubspec files and download the dependencies
 COPY pubspec.* ./
-RUN dart pub get
+RUN flutter pub get
 
 # Copy the rest of the application code
 COPY . .
