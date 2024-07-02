@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  mysql:
+    build: ./db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: myDb
+      MYSQL_USER: vanle
+      MYSQL_PASSWORD: 123
+    container_name: mysql-container
+    ports:
+      - 3306:3306
+    networks:
+      - backend_nw
+
+  node:
+    build: ./web
+    restart: on-failure
+    container_name: node-container
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: vanle
+      MYSQL_PASSWORD: 123
+      MYSQL_DATABASE: myDb
+    ports:
+      - 5000:5000
+    depends_on:
+      - mysql
+    networks:
+      - backend_nw
+networks:
+  backend_nw:
