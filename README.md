@@ -45,3 +45,15 @@ ENV MYSQL_DATABASE=testDb
 COPY testdump.sql /docker-entrypoint-initdb.d/
 
 ```
+
+# Check IP address cua container
+
+```
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_name_or_id>
+```
+
+# list ra nhung port dang listening
+
+```
+netstat -an | find "LISTENING"
+```

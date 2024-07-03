@@ -4,6 +4,7 @@ services:
   mysql:
     build: ./db
     restart: always
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_DATABASE: myDb
