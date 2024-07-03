@@ -10,9 +10,7 @@ const connection = mysql.createPool({
     database: process.env.MYSQL_DATABASE || "myDb",
 });
 
-console.log("connection = ", connection);
-
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
     connection.query("SELECT * FROM Student", (err, rows) => {
         if (err) {
             res.json({
