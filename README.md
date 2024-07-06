@@ -106,3 +106,9 @@ server busybox
 
 tao mang ingress
 docker network create --driver=overlay --ingress ingress
+
+docker run -it --privileged --name node2 -d docker:dind
+docker run -it --privileged --name node3 -d docker:dind
+
+docker exec -it node2 sh
+docker exec -it node3 sh

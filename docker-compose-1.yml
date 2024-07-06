@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  dind1:
+    image: docker:20.10.7-dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""
+    volumes:
+      - dind1-data:/var/lib/docker
+
+  dind2:
+    image: docker:20.10.7-dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""
+    volumes:
+      - dind2-data:/var/lib/docker
+
+volumes:
+  dind1-data:
+  dind2-data:
