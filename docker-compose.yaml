@@ -1,24 +1,16 @@
-name: my-app
-
+version: '3.1'
 services:
-  web:
-    image: nginx:latest
+  oracle:
+    image: doctorkirk/oracle-19c
+    container_name: oracle_db
+    restart: always
     ports:
-      - "1090:80"
-      - "78:80"
+      - "1521:1521"
     volumes:
-      - ./web:/usr/share/nginx/html
-    networks:
-      - my-webnet
-  web1:
-    image: nginx:latest
-    ports:
-      - "1080:80"
-      - "1070:80"
-    volumes:
-      - ./web1:/usr/share/nginx/html
-    networks:
-      - my-webnet
-
-networks:
-  my-webnet:
+      - "oracle_db:/opt/oracle/oradata"
+    environment:
+      ORACLE_SID: 'ORCLCDB'
+      ORACLE_PDB: 'ORCLPDB1'
+      ORACLE_PWD: 'oracle'
+volumes:
+  oracle_db:
